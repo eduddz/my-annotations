@@ -1,0 +1,16 @@
+header {
+    width: 100%;
+    height: 200px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    background: rgb(0, 132, 255);
+    color: #fff;
+
+    h1 {
+        font-size: 64px;
+    }
+}
