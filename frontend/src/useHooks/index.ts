@@ -57,3 +57,5 @@ export const useApi = () => ({
         return response.data[0];
     }
 });
+
+api.defaults.headers.common["accept"] = "*/*";
