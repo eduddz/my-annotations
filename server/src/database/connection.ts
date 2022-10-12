@@ -3,9 +3,9 @@ import "dotenv/config";
 import { createPool } from "mysql2/promise";
 
 export const connection = createPool({
-    host: process.env.REACT_APP_HOST,
-    user: process.env.REACT_APP_USER,
-    password: process.env.REACT_APP_PASSWORD,
-    port: parseInt(`${process.env.REACT_APP_PORT_DB}`),
-    database: process.env.REACT_APP_DATABASE,
+    host: process.env.MYSQLHOST,
+    user: process.env.MYSQLUSER,
+    password: process.env.MYSQLPASSWORD,
+    port: parseInt(`${process.env.MYSQLPORT}`),
+    database: process.env.MYSQLDATABASE,
 });
