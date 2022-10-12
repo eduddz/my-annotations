@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/server.js --port",
+    "start": "node /dist/server.js",
     "dev": "tsc -w"
   },
   "keywords": [],
