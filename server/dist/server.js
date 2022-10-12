@@ -9,7 +9,7 @@ const connection_1 = require("./database/connection");
 const server = (0, express_1.default)();
 const connect = connection_1.connection;
 server.use(express_1.default.json());
-server.use(express_1.default.urlencoded({ extended: true }));
+server.use(express_1.default.urlencoded({ extended: false }));
 server.use((0, cors_1.default)());
 // => USER
 server.post("/add-user", async (req, res) => {
