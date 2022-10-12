@@ -107,4 +107,9 @@ server.get("/create-user-table", async (req: Request, res: Response) => {
 
 server.listen(4000, () => {
     console.log("Server running at port 4000, 👌");
+    console.log("host:" + process.env.MYSQLHOST)
+    console.log("user:" + process.env.MYSQLUSER)
+    console.log("password:" + process.env.MYSQLPASSWORD)
+    console.log("port:" + parseInt(`${process.env.MYSQLPORT}`))
+    console.log("database:" + process.env.MYSQLDATABASE)
 });
