@@ -7,6 +7,6 @@ exports.connection = (0, promise_1.createPool)({
     host: process.env.MYSQLHOST,
     user: process.env.MYSQLUSER,
     password: process.env.MYSQLPASSWORD,
-    port: process.env.MYSQLPORT,
+    port: parseInt(`${process.env.MYSQLPORT}`),
     database: process.env.MYSQLDATABASE,
 });

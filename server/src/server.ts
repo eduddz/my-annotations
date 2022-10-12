@@ -6,6 +6,8 @@ import { connection } from "./database/connection";
 const server = express();
 const connect = connection;
 
+const port = 5000 || 5001;
+
 server.use(express.json());
 server.use(express.urlencoded({ extended: false }));
 server.use(cors());
@@ -105,8 +107,8 @@ server.get("/create-user-table", async (req: Request, res: Response) => {
 
 // => Server
 
-server.listen(4000, () => {
-    console.log("Server running at port 4000, 👌");
+server.listen(port, () => {
+    console.log("Server running at port " + port + ", 👌");
     console.log("host:" + process.env.MYSQLHOST)
     console.log("user:" + process.env.MYSQLUSER)
     console.log("password:" + process.env.MYSQLPASSWORD)
