@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "start": "node dist/server.js",
-    "build": "nodemon dist/server.js --omit=dev",
     "dev": "tsc -w"
   },
   "keywords": [],
