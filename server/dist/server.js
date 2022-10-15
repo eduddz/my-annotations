@@ -3,14 +3,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+require("dotenv/config");
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const connection_1 = require("./database/connection");
 const server = (0, express_1.default)();
 const connect = connection_1.connection;
-const port = 5000;
 server.use(express_1.default.json());
-server.use(express_1.default.urlencoded({ extended: false }));
+server.use(express_1.default.urlencoded({ extended: true }));
 server.use((0, cors_1.default)());
 // => USER
 server.post("/add-user", async (req, res) => {
@@ -75,11 +75,6 @@ server.get("/create-user-table", async (req, res) => {
     res.json(created);
 });
 // => Server
-server.listen(port, () => {
-    console.log("Server running at port " + port + ", 👌");
-    console.log("host:" + process.env.MYSQLHOST);
-    console.log("user:" + process.env.MYSQLUSER);
-    console.log("password:" + process.env.MYSQLPASSWORD);
-    console.log("port:" + process.env.MYSQLPORT);
-    console.log("database:" + process.env.MYSQLDATABASE);
+server.listen(process.env.PORT || 3333, () => {
+    console.log("Server running at port " + process.env.PORT + ", 👌");
 });
