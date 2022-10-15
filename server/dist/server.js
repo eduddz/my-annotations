@@ -8,7 +8,7 @@ const cors_1 = __importDefault(require("cors"));
 const connection_1 = require("./database/connection");
 const server = (0, express_1.default)();
 const connect = connection_1.connection;
-const port = 5000 || 5001;
+const port = 5000;
 server.use(express_1.default.json());
 server.use(express_1.default.urlencoded({ extended: false }));
 server.use((0, cors_1.default)());
