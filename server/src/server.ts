@@ -41,7 +41,7 @@ server.post("/add-task", async(req: Request, res: Response) => {
     const query_verify =  "SELECT * FROM my_user WHERE email = ?";
     const verify = await connect.query(query_verify, [email]);
     if(verify[0].toString().length === 0) {
-        const query_task = "INSERT INTO `my_annotations`.`my_task` (task, color, clicked, id_users) VALUES (?, ?, ?, ?)"
+        const query_task = "INSERT INTO my_task (task, color, clicked, id_users) VALUES (?, ?, ?, ?)"
         const new_task = await connect.query(query_task, [task, color, clicked, id_users]);
 
         res.json(new_task[0]);
@@ -81,10 +81,6 @@ server.delete("/delete-task", async(req: Request, res: Response) => {
         
     res.json(task);
 });
-
-server.get("/teste", async (req: Request, res: Response) => {
-    res.json({"message": "oi"});
-})
 
 
 // => CREATE TABLES
