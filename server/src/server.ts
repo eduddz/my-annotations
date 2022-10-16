@@ -42,7 +42,6 @@ server.post("/add-task", async(req: Request, res: Response) => {
         const new_task = await connect.query(query_task, [task, color, clicked, id_users]);
 
         res.json(new_task[0]);
-    }
 });
 
 server.post("/my-tasks", async(req: Request, res: Response) => {
