@@ -36,11 +36,8 @@ server.post("/my-user", async(req: Request, res: Response) => {
 // => TASK
 
 server.post("/add-task", async(req: Request, res: Response) => {
-    const { id_users, email, task, color, clicked } = req.body;
+    const { id_users, task, color, clicked } = req.body;
 
-    const query_verify =  "SELECT * FROM my_user WHERE email = ?";
-    const verify = await connect.query(query_verify, [email]);
-    if(verify[0].toString().length === 0) {
         const query_task = "INSERT INTO my_task (task, color, clicked, id_users) VALUES (?, ?, ?, ?)"
         const new_task = await connect.query(query_task, [task, color, clicked, id_users]);
 
