@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-    baseURL: import.meta.env.API_URL
+    baseURL: "https://my-annotations.up.railway.app"
 });
 
 export const useApi = () => ({
@@ -57,5 +57,3 @@ export const useApi = () => ({
         return response.data[0];
     }
 });
-
-api.defaults.headers.common["accept"] = "*/*";
